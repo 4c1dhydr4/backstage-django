@@ -1,0 +1,13 @@
+(function($){
+	$(document).ready(function(){
+		$(transition).hide();
+		$(logo_header).hide();
+		$(home).hide();
+		$(team2).hide();
+		$(services).hide();
+		$(gallery).hide();
+		$(customers).hide();
+		$(loading).hide();
+		$(home).show();
+	});
+})(jQuery);

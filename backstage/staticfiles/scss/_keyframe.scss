@@ -1,0 +1,176 @@
+@keyframes logo_header{
+	0%{
+		opacity: 1;
+		transform: translateX(-100%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0%);
+	}
+}
+@keyframes section_dashed{
+	0%{
+		opacity: 1;
+		transform: translateX(-200%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0%);
+	}
+}
+@keyframes gradientAnime{
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes sections{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes transitions{
+	0%{
+		width: 0px;
+		height: 0px;
+	}
+	100%{
+		width: 180%;
+		height: 350%;
+	}
+}
+
+@keyframes cubes{
+	$percentage: 450px;
+	0%{
+		transform: perspective($prespectiva)
+				   translateY($percentage)
+				   rotateY(-100deg)
+				   rotateX(-100deg);
+	}
+	100%{
+		transform: perspective($prespectiva)
+				   translateY(-$percentage)
+				   rotateY(270deg)
+				   rotateX(180deg);
+	}
+}
+
+@keyframes cubesServices{
+	$percentage: 300px;
+	0%{
+		transform: perspective($prespectiva)
+				   translateY($percentage)
+				   rotateY(-359deg)
+				   rotateZ(270deg)
+				   rotateX(-280deg);
+	}
+}
+
+@keyframes transition_viewport{
+	0%{
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	50%{
+		opacity: 1;
+		transform: translateX(0%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes transition_viewport_title{
+	0%{
+		opacity: 0;
+		transform: scale(0)
+					 rotateZ(180deg);
+	}
+	30%{
+		opacity: 0;
+		transform: scale(.5)
+					 rotateZ(180deg);
+	}
+	100%{
+		opacity: 1;
+		transform: scale(1)
+					 rotateZ(180deg);
+	}
+}
+
+@keyframes cartel{
+	0%{
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	20%{
+		opacity: 1;
+		transform: translateX(0%);
+		transform: rotate(15deg);
+	}
+	40%{
+		transform: rotate(-10deg);
+	}
+	60%{
+		transform: rotate(5deg);
+	}
+	80%{
+		transform: rotate(-3deg);
+	}
+}
+@keyframes cartelReverse{
+	0%{
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	20%{
+		opacity: 1;
+		transform: translateX(0%);
+		transform: rotate(-15deg);
+	}
+	40%{
+		transform: rotate(10deg);
+	}
+	60%{
+		transform: rotate(-5deg);
+	}
+	80%{
+		transform: rotate(3deg);
+	}
+}
+@keyframes reboteIn{
+	0%{
+		opacity: 0;
+		transform: scale(.3);
+	}
+	50%{
+		transform: scale(1.1);
+	}
+	70%{
+		transform: scale(.8);
+	}
+}
+@keyframes reboteIn2{
+	0%{
+		opacity: 0;
+		transform: translateX(-2000px);
+	}
+	50%{
+		opacity: 1;
+		transform: translateX(30px);
+	}
+	70%{
+		transform: translateX(-10px);
+	}
+}

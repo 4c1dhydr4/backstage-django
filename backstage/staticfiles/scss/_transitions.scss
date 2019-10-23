@@ -1,0 +1,103 @@
+#transition{
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	transfor-origin: center;
+	transform: rotateZ(180deg);
+	@include all_viewport(transparent);
+	@include flex_box(row, center, wrap, center);
+	perspective: $prespectiva;
+	h1{
+		font-size: 3em;
+		color: white;
+		animation: transition_viewport_title 2s 1;
+		z-index: 10;
+		font-family: $font_helvetica;
+		text-transform: uppercase;
+		transfor-origin: center;
+		transform: rotateZ(180deg);
+	}
+	&::before{
+		content: '';
+		position: absolute;
+		// @include all_viewport($transition_color);
+		z-index: 10;
+		left: 0px;
+		bottom: 0px;
+		width: 0px;
+		height: 0px;
+		background: linear-gradient(45deg, rgba(0,0,0,.7) 45%, #aaa 50%, #ccc 60%, white);
+		animation: transitions 1.8s 1;
+	}
+	.cubes{
+		z-index: 10;
+		@include all_viewport(transparent);
+		@include flex_box(row, center, wrap, center);
+		list-style: none;
+		li{
+			$borde: $cube_size/13;
+			@include cube_face($cube_size);
+  			position: relative;
+		    transform-style: preserve-3d;
+			transition-duration: 0.5s;
+		    background-color: $color_blanco;
+		    margin: 2%;
+		    padding: 0; 
+		    animation: cubes 2s 1;
+			&::before{
+				content: '';
+				top: -$borde;
+				left: -$borde;
+				@include cube_face($cube_size);
+				background-color: $color_verde;
+				transform: rotateX(90deg)
+							translateY(-$cube_size/2)
+							translateZ($cube_size/2);
+			}
+			&::after{
+				content: '';
+				top: -$borde;
+				left: -$borde;
+				@include cube_face($cube_size);
+				transform: rotateY(90deg)
+							translateZ($cube_size/2)
+							translateX($cube_size/2);
+				background-color: $color_azul;
+			}
+			span{
+				@include cube_face($cube_size);
+		    	transform-style: preserve-3d;
+				display: block;
+				background-color: $color_rojo;
+				transform-origin: left center;
+				position: relative;
+				top: -$borde;
+				left: -$borde;
+				transform: rotateY(90deg);
+				&::before{
+					content: '';
+					top: -$borde;
+					left: -$borde;
+					@include cube_face($cube_size);
+					background-color: $color_naranja;
+					transform:	rotateY(90deg)
+								translateZ(-(-$cube_size)/2)
+								translateX((-$cube_size)/2);
+				}
+				&::after{
+					content: '';
+					top: -$borde;
+					left: -$borde;
+					@include cube_face($cube_size);
+					background-color: $color_amarillo;
+					transform: translateZ(($cube_size)/2)
+								translateY($cube_size/2)
+								rotateX(90deg);
+				}
+			}
+		}
+	}
+}
+
+

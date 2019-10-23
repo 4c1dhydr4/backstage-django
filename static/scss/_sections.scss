@@ -1,0 +1,73 @@
+.section_title{
+	font-size: 4em;
+	position: relative;
+	font-family: $font_helvetica;
+	font-weight: bolder;
+	&::before{
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 15%;
+		background: linear-gradient(to right, red,orange,yellow,green,#00BCFF
+											, red,orange,yellow,green,#00BCFF
+											, red,orange,yellow,green,#00BCFF
+											, red,orange,yellow,green,#00BCFF
+											, red,orange,yellow,green,#00BCFF
+											, red,orange,yellow,green,#00BCFF
+											, red,orange,yellow,green,#00BCFF
+											, red,orange,yellow,green,#00BCFF); 
+		background-size: 1000% 1000%;
+		bottom: -20%;
+		overflow: hidden;
+		animation: section_dashed 1.1s 1, gradientAnime 80s ease infinite 1.3s;
+	}
+}
+.mainContent{
+	overflow: visible;
+	width: 90%;
+	height: 90%;
+	margin: 2% auto;
+	padding: 0;
+	background-color: transparent;
+	position: relative;
+}
+
+.mainSection{
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	animation: sections .8s 1;
+}
+// Extra small devices (phones, 600px and down)
+@media only screen and (max-width: 400px){
+	.mainContent{
+		margin: 5% auto;
+		height: 95%;
+	}
+}
+@media only screen and (min-width: 400px){
+	.mainContent{
+		margin: 4% auto;
+		height: 95%;
+	}
+}
+@media (min-width: 500px) and (orientation: landscape){}
+@media (min-width: 768px) and (orientation: landscape){
+	.mainContent{
+		margin: 3% auto;
+	}
+}
+@media only screen and (min-width: 1024px){
+	.mainContent{
+			margin: 2% auto;
+			margin-top: 2.5%;
+			margin-bottom: 10%;
+		}
+	}
+@media only screen and (min-width: 1777px) {}

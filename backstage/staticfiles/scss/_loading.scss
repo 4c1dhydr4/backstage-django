@@ -1,0 +1,12 @@
+#loading{
+		content: '';
+		position: absolute;
+		z-index: 20;
+		@include all_viewport(black);
+		text-align: center;
+		h1{
+			font-size: 3em;
+			color:white;
+			margin: 20% auto;
+		}
+}

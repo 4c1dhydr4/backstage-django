@@ -1,0 +1,110 @@
+#gallery{
+	overflow: visible;
+}
+.gallery_content{
+	width: 90%;
+	margin: 0% 6% 4% 5%;
+	position: relative;
+    border: tan solid 12px;
+    border-top: #bda27e solid 12px;
+    border-left: #b19876 solid 12px;
+    border-bottom: #c9ad86 solid 12px;
+    box-shadow: 0px 0px 6px 5px rgba(58, 18, 13, 0), 0px 0px 0px 2px #c2a782, 0px 0px 0px 4px #a58e6f, 3px 4px 8px 5px rgba(0, 0, 0, 0.5);
+	background-color: #ddd;
+	// background-color: #C88E5A;
+	.gallery_pic{
+		position: absolute;
+		width: $gallery_pic_size;
+		height: $gallery_pic_size;
+		overflow: hidden;
+		transition: all .8s;
+		border: 8px solid white;
+		text-align: center;
+		@include flex_box(column,flex-end, wrap, center);
+		img{
+			height: 100%;
+		}
+		span{
+			position: absolute;
+			display: block;
+			color: black;
+			font-size: .5em;
+			background-color: white;
+			padding: 8% 4%;
+			width: 100%;
+			margin: 0;
+		}
+		div{
+			position: absolute;
+			top: 0;
+			left: 35%;
+			width: $pin_size;
+			height: $pin_size;
+			img{
+				width: 100%;
+			}
+		}
+		@for $i from 1 through 8{
+			&:nth-child(#{$i}){
+				top:  10%;
+				left: gallery_position($i);
+				transform: rotateZ(gallery_rotation());
+			}
+		}
+		@for $i from 9 through 16{
+			&:nth-child(#{$i}){
+				top:  55%;
+				left: gallery_position_($i);
+				transform: rotateZ(gallery_rotation());
+			}
+		}
+		@for $i from 1 through 20{
+			&:hover{
+				z-index: 5;
+				transform: rotateZ(0deg) scale(2);
+				top: 32%;
+				left: 40%;
+				div{
+					display: none;
+				}
+			}
+			&:nth-child(#{$i}){
+				div{
+					img{
+						filter: hue_Rotate();
+						transform: scaleX(scale_pin($i));
+					}
+				}
+			}
+		}
+	}
+}
+.gallery_title{
+	position: absolute;
+	display: inline-block;
+	background-color: white;
+	font-family: $font_helvetica;
+	font-size: 2em;
+	text-align: center;
+	margin-top: .5%;
+	color: black;
+	width: 20%;
+	z-index: 2;
+	left: 8%;
+	top: 2%;
+	transform: rotateZ(-3deg);
+	img{
+		position: absolute;
+		width: 20%;
+		top: -60%;
+	}
+	.pin1{
+		left: -10%;
+	}
+	.pin2{
+		top: -80%;
+		left: 90%;
+		transform: scaleX(-1);
+		filter: hue-rotate(70deg);
+	}
+}

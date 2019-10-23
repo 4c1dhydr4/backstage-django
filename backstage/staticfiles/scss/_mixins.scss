@@ -1,0 +1,146 @@
+@mixin all_viewport($color){
+  width: 100vw;
+  height: 100vh;
+  margin: 0px 0px 0px 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $color;
+  overflow: hidden;
+} 
+@mixin flex_box($direction: row,$justify: flex-start, $wrap: wrap, $align:center){
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	flex-wrap: $wrap;
+	align-items: $align;
+}
+
+
+@mixin text_border($shadow_color:#fff){
+	text-shadow:
+	   -1px -1px 0 $shadow_color,  
+	    1px -1px 0 $shadow_color,
+	    -1px 1px 0 $shadow_color,
+	     1px 1px 0 $shadow_color;
+}
+@mixin text_border_size($shadow_color:#fff, $size:1){
+	text-shadow:
+	   unquote('-#{($size)}px -#{($size)}px 0 #{($shadow_color)},  
+	    #{($size)}px -#{($size)}px 0 #{($shadow_color)},
+	    -#{($size)}px #{($size)}px 0 #{($shadow_color)},
+	     #{($size)}px #{($size)}px 0 #{($shadow_color)};')
+}
+@mixin cube_face($size){
+	border: $size/13 solid black;
+	box-sizing: border-box;
+	width: $size;
+	height: $size;
+	// border-radius: $size/20;
+	position: absolute;
+}
+
+@mixin cube_face_service($size){
+	border: $size/20 solid black;
+	box-sizing: border-box;
+	width: $size;
+	height: $size;
+	border-radius: $size/8;
+	position: absolute;
+}
+
+
+@mixin serviceCube($size, $front_color, $back_color, $up_color, $down_color, $left_color, $right_color){
+	$borde: $size/20;
+	@include cube_face_service($size);
+	position: relative;
+    transform-style: preserve-3d;
+	transition-duration: 0.5s;
+    background-color: $front_color;
+    margin: 2%;
+    padding: 0; 
+    animation: cubesServices 3s 1;
+	&::before{
+		content: '';
+		top: -$borde;
+		left: -$borde;
+		@include cube_face_service($size);
+		background-color: $down_color;
+		transform: rotateX(90deg)
+					translateY(-$size/2)
+					translateZ($size/2);
+	}
+	&::after{
+		content: '';
+		top: -$borde;
+		left: -$borde;
+		@include cube_face_service($size);
+		transform: rotateY(90deg)
+					translateZ($size/2)
+					translateX($size/2);
+		background-color: $up_color;
+	}
+	span{
+		@include cube_face_service($size);
+    	transform-style: preserve-3d;
+		display: block;
+		background-color: $back_color;
+		transform-origin: left center;
+		position: relative;
+		top: -$borde;
+		left: -$borde;
+		transform: rotateY(90deg);
+		&::before{
+			content: '';
+			top: -$borde;
+			left: -$borde;
+			@include cube_face_service($size);
+			background-color: $left_color;
+			transform:	rotateY(90deg)
+						translateZ(-(-$size)/2)
+						translateX((-$size)/2);
+		}
+		&::after{
+			content: '';
+			top: -$borde;
+			left: -$borde;
+			@include cube_face_service($size);
+			background-color: $right_color;
+			transform: translateZ(($size)/2)
+						translateY($size/2)
+						rotateX(90deg);
+		}
+	}
+}
+
+@mixin positionCube($top:0,$left:0,$X:0,$Y:0,$Z:0){
+	position: fixed;
+	top: $top;
+	left: $left;
+	transform: 
+				rotateX(#{$X}deg)
+				rotateY(#{$Y}deg)
+				rotateZ(#{$Z}deg);
+}
+
+@mixin positionCubeZ($top:0,$left:0,$X:0,$Y:0,$Z:0,$TZ:0){
+	position: fixed;
+	top: $top;
+	left: $left;
+	transform: 
+				rotateX(#{$X}deg)
+				rotateY(#{$Y}deg)
+				rotateZ(#{$Z}deg)
+				translateZ(#{$TZ});
+}
+
+@mixin positionCubeHover($top:0,$left:0,$X:0,$Y:0,$Z:0,$TZ:0){
+	position: fixed;
+	top: $top;
+	left: $left;
+	transform: scale(2)
+				rotateX(#{$X}deg)
+				rotateY(#{$Y}deg)
+				rotateZ(#{$Z}deg)
+				translateZ(#{$TZ});
+}

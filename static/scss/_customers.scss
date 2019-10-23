@@ -1,0 +1,26 @@
+.customers_content{
+	width: 95%;
+	margin: 4% 1% 4% 1%;
+	text-align: center;
+	@include flex_box(column,space-between, wrap, center);
+	h2{
+		margin-top: -4%; 
+		font-size:3.5em;
+		position: relative;
+	}
+	.customers_logos{
+		margin-bottom: 4%; 
+		width: 90%;
+		height: 80%;
+		@include flex_box(column,space-between, wrap, center);
+		.customers_logo{
+			width: $customer_logo_size + $customer_logo_size/2;
+			height: $customer_logo_size;
+			img{
+				filter: grayscale(30%);
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}

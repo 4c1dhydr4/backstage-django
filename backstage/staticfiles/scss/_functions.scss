@@ -1,0 +1,50 @@
+// @function gallery_position($i){
+// 	@return percentage(($i*.09)-.09);
+// }
+// @function gallery_position_($i){
+// 	@return percentage(($i*.09)-1);
+// }
+@function gallery_position($i){
+	@return percentage(($i*.11)-.09);
+}
+@function gallery_position_($i){
+	@return percentage(($i*.113)-1);
+}
+
+
+@function gallery_rotation(){
+	@return unquote('#{random(16)-8}deg');
+}
+@function hue_Rotate(){
+	@return unquote('hue-rotate(#{random(360)-180}deg)');
+}
+@function scale_pin($i){
+	@if $i%2==0 {
+		@return -1;
+	}@else{
+		@return 1;
+	}
+}
+@function z_pin($i){
+	@if $i%2==0 {
+		@return 7;
+	}@else{
+		@return 8;
+	}
+}
+
+@function text-longshadow($numero, $color){
+	$text-shadow: -1px -1px #{$color},1px -1px #{$color}, -1px 1px #{$color};
+	@for $i from 1 through $numero{
+		$text-shadow: '#{$text-shadow},
+					  #{$i}px #{$i}px #{$color}';
+	}
+	@return unquote($text-shadow);
+}
+
+@function random_color_rubki(){
+	$key: random( length($rubik) );
+	$nth: nth( $rubik, $key );
+	@return $nth;
+}
+

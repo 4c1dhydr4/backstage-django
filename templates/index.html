@@ -1,0 +1,319 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Backstage & marketing</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/icons.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<style type="text/css">
+		body{
+			background-image: url({% static 'img/backgrounds/03.png' %});
+		}
+		.gallery_content{
+			background-image: url({% static 'img/backgrounds/02.png' %});
+		}
+		.gallery_title{
+			background-image: url({% static 'img/backgrounds/04.png' %});
+		}
+	</style>
+</head>
+<body>
+	<section id="loading"><h1>Loading</h1></section>
+	<section id="transition">
+		<h1 id="transition_title">Transición</h1>
+		<ul class="cubes">
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+			<li><span></span></li>
+		</ul>
+	</section>
+	<main class="mainContent" id="main">
+		<nav id="nav" class="navbar">
+			<ul>
+				<li id="nav_home"><span>I N I C I O </span></li>
+				<li id="nav_team"><span>E Q U I P O </span></li>
+				<li id="nav_services"><span>S E R V I C I O S </span></li>
+				<li id="nav_portfolio"><span>G A L E R Í A </span></li>
+				<li id="nav_customers"><span>C L I E N T E S </span></li>
+			</ul>
+		</nav>
+		<section class="mainSection" id="home">
+			<div class="home_left">
+				<figure class="logo">
+					<img src="{% static 'img/logo_letras.png' %}">
+				</figure>
+				<article class="menu">
+					<ul>
+						<li>Nuestro Equipo</li>
+						<li>Servicios</li>
+						<li>Galería</li>
+						<li>Nuestros Clientes</li>
+					</ul>
+				</article>
+			</div>
+			<div class="home_right">
+				<li><span></span><b>Activaciones</b></li>
+				<li><span></span><b>Eventos</b></li>
+				<li><span></span><b>BTL</b></li>
+				<li><span></span><b>Fotografía</b></li>
+				<li><span></span><b>Video</b></li>
+				<li><span></span><b>Diseño</b></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span><b>Producción</b></li>
+				<li><span></span><b>LED</b></li>
+				<li><span></span><b>Pantallas</b></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+			</div>
+		</section> 
+		<section class="mainSection" id="team2">
+			<article class="team_2">
+				<h1 class="section_title">Nuestro Equipo</h1>
+				<h2>En <span>Backstage & Marketing</span> trabajamos para que tu marca se conecte con el consumidor de manera <span>exitosa y creativa</span></h2>
+				<h3>Nuestros clientes son nuestros aliados y juntos formamos un <span id="teamSpan">equipo</span> que busca la satisfacción y excelencia en nuestros servicios y productos.</h3>
+				<div class="team_picture">
+					<img src="{% static 'img/team.gif' %}">
+					<span class="teamFooter">Equipo Backstage 2018</span>
+				</div>
+			</article>
+		</section> 
+		<section class="mainSection" id="services">
+			<article class="services">
+				<h1 class="section_title">Servicios</h1>
+				<figure class="service">
+					<div class="chead cheadRed">
+						<img src="{% static 'img/services/service_logo.png' %}" class="service_logo" alt="cardlogo">
+						<img src="{% static 'img/services/anfi.png' %}" alt="product" class="service_product">
+						<h2>Activaciones</h2>
+						<span>BTL</span>
+					</div>
+					<div class="cbody">
+						<span>Activaciones <b>BTL</b></span>
+						<p>Descripción atractiva para el cliente...</p>
+						<ul>
+							<li>Impulso</li>
+							<li>Activaciones Inhouse</li>
+							<li>Presencia de Marca</li>
+							<li>Hora Loca</li>
+							<li>Anfitrionaje</li>
+							<li>Rompecalle</li>
+							<li>Volanteos</li>
+							<li>Perifoneos</li>
+						</ul>
+					</div>
+				</figure>
+				<figure class="service">
+					<div class="chead cheadGreen">
+						<img src="{% static 'img/services/service_logo.png' %}" class="service_logo" alt="cardlogo">
+						<img src="{% static 'img/services/anfi.png' %}" alt="product" class="service_product">
+						<h2>Implementaciones</h2>
+						<span>IMP</span>
+					</div>
+					<div class="cbody">
+						<span><b>Implementaciones</b></span>
+						<p>Descripción atractiva para el cliente...</p>
+						<ul>
+							<li>Las implementaciones Lorem ipsum dolor sit amet, consectetur adipisicing elit,  dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
+						</ul>
+					</div>
+				</figure>
+				<figure class="service">
+					<div class="chead cheadOrange">
+						<img src="{% static 'img/services/service_logo.png' %}" class="service_logo" alt="cardlogo">
+						<img src="{% static 'img/services/eventos.png' %}" alt="product" class="service_product event">
+						<h2>Produccion de </h2>
+						<span class="eventos">Eventos</span>
+					</div>
+					<div class="cbody">
+						<span>Produccion de <b>Eventos</b></span>
+						<p>Descripción atractiva para el cliente...</p>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li>Las implementaciones Lorem ipsum dolor sit amet, consectetur adipisicing elit,</li>
+						</ul>
+					</div>
+				</figure>
+				<figure class="service">
+					<div class="chead cheadYellow">
+						<img src="{% static 'img/services/service_logo.png' %}" class="service_logo" alt="cardlogo">
+						<img src="{% static 'img/services/audiovisual.png' %}" alt="product" class="service_product production">
+						<h2>Diseño y Producción</h2>
+						<span>D&P</span>
+					</div>
+					<div class="cbody">
+						<span>Piezas <b>Publicitarias</b></span>
+						<p>Descripción atractiva para el cliente...</p>
+						<ul>
+							<li>Videos Institucionales</li>
+							<li>Impresión | Producción | Ejecución</li>
+							<li>Piezas Gráficas</li>
+							<li>Clips musicales</li>
+							<li>Páginas web</li>
+							<li></li>
+							<li>Comerciales</li>
+						</ul>
+					</div>
+				</figure>
+				<figure class="service">
+					<div class="chead cheadBlue">
+						<img src="{% static 'img/services/service_logo.png' %}" class="service_logo" alt="cardlogo">
+						<img src="{% static 'img/services/tv.png' %}" alt="product" class="service_product tv">
+						<h2>Pantallas</h2>
+						<span>LED</span>
+					</div>
+					<div class="cbody">
+						<span>Pantallas <b>LED</b></span>
+						<p>Descripción atractiva para el cliente...</p>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li>P16 Exterior Rental</li>
+							<li>P3.9 Interior Rental</li>
+							<li>P6 Exterior/Interior Rental</li>
+						</ul>
+					</div>
+				</figure>
+				<figure class="service">
+					<div class="chead cheadTurk">
+						<img src="{% static 'img/services/service_logo.png' %}" class="service_logo" alt="cardlogo">
+						<img src="{% static 'img/services/phoyobooth.png' %}" alt="product" class="service_product photobooth">
+						<h2>Fotografía y Video</h2>
+						<span>F&V</span>
+					</div>
+					<div class="cbody">
+						<span><b>Fotografía</b> y <b>Video</b></span>
+						<p>Descripción atractiva para el cliente...</p>
+						<ul>
+							<li>Photobooth | Photocall</li>
+							<li>Cobertura de Eventos</li>
+							<li>Publirreportajes</li>
+							<li></li>
+							<li>Documentales</li>
+						</ul>
+					</div>
+				</figure>
+				<figure class="service">
+					<div class="chead cheadPink">
+						<img src="{% static 'img/services/service_logo.png' %}" class="service_logo" alt="cardlogo">
+						<img src="{% static 'img/services/talleres.png' %}" alt="product" class="service_product workfolow">
+						<h2>Talleres Workshop</h2>
+						<span>T&W</span>
+					</div>
+					<div class="cbody">
+						<span><b>Talleres</b></span>
+						<p>Descripción atractiva para el cliente...</p>
+						<ul>
+							<li></li>
+							<li></li>
+							<li>Las implementaciones Lorem ipsum dolor sit amet, consectetur adipisicing elit,  dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
+						</ul>
+					</div>
+				</figure>
+				<figure class="service">
+					<div class="chead">
+						<img src="{% static 'img/services/service_logo.png' %}" class="service_logo" alt="cardlogo">
+						<img src="{% static 'img/services/anfi.png' %}" alt="product" class="service_product">
+						<h2>Service</h2>
+						<span>SERV</span>
+					</div>
+					<div class="cbody">
+						<span><b>Service</b></span>
+						<p>Descripción atractiva para el cliente...</p>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li>Las implementaciones Lorem ipsum dolor sit amet, consectetur adipisicing elit,  dolor sit amet,</li>
+						</ul>
+					</div>
+				</figure>
+			</article>
+		</section> 
+		<section class="mainSection" id="gallery">
+			<h1 class="gallery_title"><img class="pin1" src="{% static 'img/assets/pin.png' %}"></div>Galería<img class="pin2" src="{% static 'img/assets/pin.png' %}"></div></h1>
+			<article class="gallery_content">
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/01.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/02.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/03.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/04.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/05.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/01.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/02.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/03.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/04.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/05.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/01.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/02.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/03.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/04.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/05.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/01.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<!-- <figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/02.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/03.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/04.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure>
+				<figure class="gallery_pic"><div class="pin"><img src="{% static 'img/assets/pin.png' %}"></div><img src="{% static 'img/gallery/05.jpg' %}"><span>Lorem ipsum dolor sit amet, - 20/05/2018</span></figure> -->
+			</article>
+		</section> 
+		<section class="mainSection" id="customers">
+			<article class="customers_content">
+				<h2 class="section_title">
+					Nuestros Clientes
+				</h2>
+				<div class="customers_logos">
+					<figure class="customers_logo"><img src="{% static 'img/customers/autonort.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/backus.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/tatahuatay.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/caprisun.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/directv.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/quinde.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/goldfields.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/express.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/pj.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/metro.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/pacasmayo.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/paris.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/arauco.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/upn.png' %}"></figure>
+					<figure class="customers_logo"><img src="{% static 'img/customers/hyundai.png' %}"></figure>
+				</div>
+			</article>
+		</section>
+		<footer class="contact_content" id="contact">
+			<a href="https://www.facebook.com/backstagemkt/" class="social backstageicons-facebook-alt fb"><h3>backstagemkt</h3></a>
+			<a href="https://www.instagram.com/backstage_y_marketing/" class="social backstageicons-instagram inst"><h3>backstage_y_marketing</h3></a>
+			<a href="https://api.whatsapp.com/send?phone=51976388095" class="social backstageicons-whatsapp wa"><h3>976388095</h3></a>
+			<a href="mailto:backstageymarketing@gmail.com" class="social backstageicons-at mail"><h3>backstageymarketing@gmail.com</h3></a>
+		</footer>
+	</main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="{% static 'js/jquery-3.3.1.min.js' %}"><\/script>')</script>
+	<script type="text/javascript" src="{% static 'js/slectors.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/nav.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/cube.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

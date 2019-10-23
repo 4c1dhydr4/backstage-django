@@ -1,0 +1,22 @@
+*{
+	box-sizing: border-box;
+	// font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-family: Impact;
+}
+body{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	// background: $color_fondo;
+	background-repeat: repeat;
+	background-position: center;
+	background-color:rgba(0, 0, 0, 0.15);
+}
+
+h1{
+	margin: 0;
+	padding: 0;
+	font-family: Impact;
+}

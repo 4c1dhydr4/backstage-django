@@ -1,0 +1,199 @@
+#home{
+	width: 100%;
+	height: 90%;
+	overflow: visible;
+	// @include flex_box(row,center, wrap, center);
+}
+.home_left{
+	width: 30%;
+	height: 100%;
+	position: relative;
+	.logo{
+		height: 50%;
+		position: absolute;
+		top: 20%;
+		left: 80%;
+		animation: lettersLeft 8s 1;
+		img{
+			height: 100%;
+		}
+	}
+	.menu{
+		position: fixed;
+		width: 50vw;
+		top: 70%;
+		left: 25%;
+		margin: 0 auto;
+		list-style: none;
+		ul{
+			width: 100%;
+			font-family: $font_helvetica;
+			@include flex_box(row,center, wrap, center);
+			text-align: center;
+			animation: homeMenu 8.1s 1;
+			li{
+				display: block;
+				height: 50px;
+				margin: 5% 5%;
+				cursor: pointer;
+				transition: all .5s;
+				&:hover{
+					transform: 
+						scale(1.3)
+						translateY(-10px);
+				}
+			}
+		}
+	}
+}
+.home_right{
+	width: 50%;
+	height: 100%;
+	background-color: transparent;
+	list-style: none;
+ 	transform-style: preserve-3d;
+	z-index: 5;
+	transform: translateX(-500px)
+				scale(.6);
+	animation: cubeToLeft 8s 1;
+	li{
+		$size: 100px;
+		font-size: 16px;
+		//Abajo
+		$rotX:-13;
+		$rotY:20;
+		$rotZ:57;
+		//Arriba
+		$rotDX:0;
+		$rotDY:45;
+		$rotDZ:47;
+		cursor: pointer;
+		//Animaciónes
+		$ATime: 7s;
+		@include subeServiceAnimation ($ATime);
+		&:nth-child(1){
+			@include serviceCube($size, $color_amarillo, $black, $color_rojo, $black, $black, $color_azul);
+			@include positionCube(65%, 25%, $rotX, $rotY, $rotZ);
+			@include cubeServerFont(1em, 35%, 5%);
+			//Activaciones
+			animation: cubeAnimation_A $ATime 1;
+		}
+		&:nth-child(2){
+			@include serviceCube($size, $color_verde, $black, $black, $black, $black, $color_rojo);
+			@include positionCubeZ(50%, 15%, $rotX, $rotY, $rotZ, 30px);
+			@include cubeServerFont(1.5em, 35%, 10%);
+			//Eventos
+			animation: cubeAnimation_B $ATime 1;
+		}
+		&:nth-child(3){
+			@include serviceCube($size, $color_azul, $color_naranja, $black, $black, $black, $black);
+			@include positionCubeZ(56%, 41%, $rotX, $rotY, $rotZ, -55px);
+			@include cubeServerFont(2.5em, 25%, 15%);
+			//BTL
+			animation: cubeAnimation_C $ATime 1;
+		}
+		&:nth-child(4){
+			@include serviceCube($size, $color_blanco, $black, $black, $black, $black, $black);
+			@include positionCubeZ(41%, 31%, $rotX, $rotY, $rotZ, -25px);
+			@include cubeServerFont(1.2em, 35%, 5%);
+			//Fotografía
+			animation: cubeAnimation_E $ATime 1;
+		}
+		&:nth-child(5){
+			@include serviceCube($size, $color_verde, $black, $black, $black, $black, $black);
+			@include positionCubeZ(46.5%, 56%, $rotX, $rotY, $rotZ, -97px);
+			@include cubeServerFont(2em, 30%, 10%);
+			//Vídeo
+			animation: cubeAnimation_D $ATime 1;
+		}
+		&:nth-child(6){
+			@include serviceCube($size, $color_naranja, $black, $black, $black, $black, $black);
+			@include positionCubeZ(31.5%, 46%, $rotX, $rotY, $rotZ, -62px);
+			@include cubeServerFont(1.8em, 30%, 5%);
+			//Diseño
+			animation: cubeAnimation_F $ATime 1;
+		}
+		&:nth-child(7){
+			@include serviceCube($size, $color_amarillo, $color_naranja, $color_verde, $color_azul, $black, $color_blanco);
+			@include positionCubeZ(65%, 25%, $rotX, $rotY, $rotZ, -103px);
+			//Esquina superior izquierda
+			animation: cubeAnimation_RA $ATime 1;
+		}
+		&:nth-child(8){
+			@include serviceCube($size, $black, $black, $color_naranja, $color_azul, $black, $color_verde);
+			@include positionCubeZ(50%, 15%, $rotX, $rotY, $rotZ, -85px);
+			//Esquina superior izquierda - 2
+			animation: cubeAnimation_RB $ATime 1;
+		}
+		&:nth-child(9){
+			@include serviceCube($size, $color_azul, $black, $color_amarillo, $color_verde, $black, $color_amarillo);
+			@include positionCubeZ(65%, 25%, $rotX, $rotY, $rotZ, -215px);
+			//Esquina inferior izquierda
+			animation: cubeAnimation_RC $ATime 1;
+		}
+		&:nth-child(10){
+			@include serviceCube($size, $black, $black, $color_verde, $color_rojo, $black, $color_azul);
+			@include positionCubeZ(50%, 15%, $rotX, $rotY, $rotZ, -200px);
+			//Esquina inferior izquierda - 2
+			animation: cubeAnimation_RD $ATime 1;
+		}
+		&:nth-child(11){
+			@include serviceCube($size, $color_azul, $color_blanco, $black, $black, $black, $color_amarillo);
+			@include positionCubeZ(26%, 10%, $rotDX, $rotDY, $rotDZ, 70px);
+			@include cubeServerFont(1.1em, 40%, 5%);
+			//Producción
+			animation: cubeAnimation_G $ATime 1;
+		}
+		&:nth-child(12){
+			@include serviceCube($size, $color_naranja, $color_verde, $black, $black, $black, $black);
+			@include positionCubeZ(13%, 26%, $rotDX, $rotDY, $rotDZ, 9px);
+			@include cubeServerFont(3em, 20%, 15%);
+			//LED
+			animation: cubeAnimation_H $ATime 1;
+		}
+		&:nth-child(13){
+			@include serviceCube($size, $color_amarillo, $color_rojo, $black, $black, $black, $black);
+			@include positionCubeZ(1%, 42%, $rotDX, $rotDY, $rotDZ, -60px);
+			@include cubeServerFont(1.4em, 30%, 2%);
+			//Pantallas
+			animation: cubeAnimation_I $ATime 1;
+		}
+		&:nth-child(14){
+			@include serviceCube($size, $black, $color_amarillo, $color_rojo, $color_blanco, $black, $color_verde);
+			@include positionCubeZ(26%, 9%, $rotDX, $rotDY, $rotDZ, -22px);
+			//Esquina superior derecha
+			animation: cubeAnimation_RE $ATime 1;
+		}
+		&:nth-child(15){
+			@include serviceCube($size, $black, $color_naranja, $color_azul, $color_verde, $black, $black);
+			@include positionCubeZ(13%, 25%, $rotDX, $rotDY, $rotDZ, -85px);
+			//Esquina superior derecha 2
+			animation: cubeAnimation_RF $ATime 1;
+		}
+		&:nth-child(16){
+			@include serviceCube($size, $black, $color_azul, $color_amarillo, $color_naranja, $black, $color_verde);
+			@include positionCubeZ(1%, 40%, $rotDX, $rotDY, $rotDZ, -150px);
+			animation: cubeAnimation_RG $ATime 1;
+		}
+		&:nth-child(17){
+			@include serviceCube($size, $black, $color_rojo, $black, $color_blanco, $black, $color_naranja);
+			@include positionCubeZ(26%, 8%, $rotDX, $rotDY, $rotDZ, -115px);
+			animation: cubeAnimation_RH $ATime 1;
+		}
+		&:nth-child(18){
+			@include serviceCube($size, $color_amarillo, $color_azul, $color_blanco, $color_rojo, $black, $black);
+			@include positionCubeZ(13%, 26%, $rotDX, $rotDY, $rotDZ, -195px);
+			animation: cubeAnimation_RI $ATime 1;
+		}
+		&:nth-child(19){
+			@include serviceCube($size, $color_rojo, $color_amarillo, $color_azul, $black, $black, $color_naranja);
+			@include positionCubeZ(1%, 41%, $rotDX, $rotDY, $rotDZ, -256px);
+			animation: cubeAnimation_RJ $ATime 1;
+		}
+		&:nth-child(20){
+			@include serviceCube($size, $black, $black, $black, $black, $black, $black);
+			@include positionCubeZ(31.5%, 46%, $rotX, $rotY, $rotZ, -150px);
+			animation: cubeAnimation_RK $ATime 1;
+		}
+	}
+}

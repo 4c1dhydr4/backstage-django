@@ -1,0 +1,77 @@
+.navbar{
+	width: 5%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 8;
+	animation: navBar 8s 1;
+	// background-color: white;
+	ul{
+		text-decoration: none;
+		list-style: none;
+		height: 100vh;
+		@include flex_box(column, space-between, wrap, center);
+		font-size: 1.1rem;
+		margin: 0;
+		li{
+			border-radius: 10px;
+			color: white;
+			cursor: pointer;
+			display: block;
+			width: 200%;
+			transform: rotateZ(90deg);
+			margin: 50% auto;
+			padding:  80% 0 5% 0;
+			// @include text_border(#000);
+			left: 0;
+			text-align: center;
+			font-family: $font_helvetica;
+			transition: all .3s;
+			span{
+				position: absolute;
+				width: 7%;
+				height: 100%;
+				transform: rotateZ(-90deg);
+				top: 30%;
+				left: 20%;
+				font-size: .65em;
+			}
+			&:nth-child(1){
+				background-color: $color_verde;
+				span{
+					left: 40%;
+				}
+			}
+			&:nth-child(2){
+				background-color: $color_naranja;
+				span{
+					left: 40%;
+				}
+			}
+			&:nth-child(3){
+				background-color: $color_rojo;
+				span{
+					left: 30%;
+				}
+			}
+			&:nth-child(4){
+				background-color: $color_azul;
+				span{
+					left: 40%;
+				}
+			}
+			&:nth-child(5){
+				color: black;
+				background-color: $color_blanco;
+				span{
+					left: 35%;
+				}
+			}
+			&:hover{
+				transform: translateX(-13%)
+							 rotateZ(90deg);
+			}
+		}
+	}
+}

@@ -1,0 +1,358 @@
+@mixin all_viewport($color){
+  width: 100vw;
+  height: 100vh;
+  margin: 0px 0px 0px 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $color;
+  overflow: hidden;
+} 
+@mixin flex_box($direction: row,$justify: flex-start, $wrap: wrap, $align:center){
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	flex-wrap: $wrap;
+	align-items: $align;
+}
+
+
+@mixin text_border($shadow_color:#fff){
+	text-shadow:
+	   -1px -1px 0 $shadow_color,  
+	    1px -1px 0 $shadow_color,
+	    -1px 1px 0 $shadow_color,
+	     1px 1px 0 $shadow_color;
+}
+@mixin text_border_size($shadow_color:#fff, $size:1){
+	text-shadow:
+	   unquote('-#{($size)}px -#{($size)}px 0 #{($shadow_color)}, #{($size)}px -#{($size)}px 0 #{($shadow_color)}, -#{($size)}px #{($size)}px 0 #{($shadow_color)}, #{($size)}px #{($size)}px 0 #{($shadow_color)};')
+}
+@mixin cube_face($size){
+	border: $size/13 solid black;
+	box-sizing: border-box;
+	width: $size;
+	height: $size;
+	// border-radius: $size/20;
+	position: absolute;
+}
+
+@mixin cube_face_service($size){
+	border: $size/20 solid black;
+	box-sizing: border-box;
+	width: $size;
+	height: $size;
+	border-radius: $size/8;
+	position: absolute;
+}
+
+@mixin cubeAP($top: 0%, $left: 0%, $deg: 0deg){
+	top: $top;
+	left: $left;
+	transform: rotateZ($deg);
+}
+@mixin cubeAPXYZ($top: 0%, $left: 0%, $degX: 0deg, $degY: 0deg, $degZ: 0deg){
+	top: $top;
+	left: $left;
+	transform: 
+		rotateX($degX)
+		rotateY($degY)
+		rotateZ($degZ);
+}
+
+@mixin cubeServerFont($size:2em, $top: 0, $left: 0){
+	b{
+		// font-family: $font_helvetica;
+		display: block;
+		font-size: $size;
+		position: fixed;
+		top: $top;
+		left: $left;
+		text-align: center;
+		opacity: 0;
+	}
+}
+@mixin subeServiceAnimation ($time: 4s){
+	b{
+		animation: opacityCube $time 1;	
+	}
+}
+
+@mixin serviceCube($size, $front_color, $back_color, $up_color, $down_color, $left_color, $right_color){
+	$borde: $size/20;
+	// &:active{
+	// 	@include cubeAnimationPosition(35%, 85%);
+	// }
+	@include cube_face_service($size);
+	// position: relative;
+    transform-style: preserve-3d;
+	transition-duration: 0.5s;
+    background-color: $front_color;
+    margin: 2%;
+    padding: 0; 
+    // animation: cubesServices 3s 1;
+	&::before{
+		content: '';
+		top: -$borde;
+		left: -$borde;
+		@include cube_face_service($size);
+		background-color: $down_color;
+		transform: rotateX(90deg)
+					translateY(-$size/2)
+					translateZ($size/2);
+	}
+	&::after{
+		content: '';
+		top: -$borde;
+		left: -$borde;
+		@include cube_face_service($size);
+		transform: rotateY(90deg)
+					translateZ($size/2)
+					translateX($size/2);
+		background-color: $up_color;
+	}
+	span{
+		@include cube_face_service($size);
+    	transform-style: preserve-3d;
+		display: block;
+		background-color: $back_color;
+		transform-origin: left center;
+		position: relative;
+		top: -$borde;
+		left: -$borde;
+		transform: rotateY(90deg);
+		&::before{
+			content: '';
+			top: -$borde;
+			left: -$borde;
+			@include cube_face_service($size);
+			background-color: $left_color;
+			transform:	rotateY(90deg)
+						translateZ(-(-$size)/2)
+						translateX((-$size)/2);
+		}
+		&::after{
+			content: '';
+			top: -$borde;
+			left: -$borde;
+			@include cube_face_service($size);
+			background-color: $right_color;
+			transform: translateZ(($size)/2)
+						translateY($size/2)
+						rotateX(90deg);
+		}
+	}
+}
+
+@mixin positionCube($top:0,$left:0,$X:0,$Y:0,$Z:0){
+	position: fixed;
+	top: $top;
+	left: $left;
+	transform: 
+				rotateX(#{$X}deg)
+				rotateY(#{$Y}deg)
+				rotateZ(#{$Z}deg);
+}
+
+@mixin positionCubeZ($top:0,$left:0,$X:0,$Y:0,$Z:0,$TZ:0){
+	position: fixed;
+	top: $top;
+	left: $left;
+	transform: 
+				rotateX(#{$X}deg)
+				rotateY(#{$Y}deg)
+				rotateZ(#{$Z}deg)
+				translateZ(#{$TZ});
+}
+
+@mixin positionCubeHover($top:0,$left:0,$X:0,$Y:0,$Z:0,$TZ:0){
+	position: fixed;
+	top: $top;
+	left: $left;
+	transform: scale(2)
+				rotateX(#{$X}deg)
+				rotateY(#{$Y}deg)
+				rotateZ(#{$Z}deg)
+				translateZ(#{$TZ});
+}
+@mixin service_card($width, $height){
+	width: $width;
+	height: $height;
+	margin: $height/10 auto;
+	background-color: black;
+	border-radius: $width/10;
+	box-shadow: $width/28 $width/28 2px rgba(0,0,0,0.3);
+	&:hover{
+		box-shadow: none;
+	}
+}
+@mixin service_card_head($width, $height, $color_:red){
+	position: relative;
+	height: $height/2;
+	background: $color_;
+	border-radius: $width/10 $width/10 0 0;
+
+}
+@mixin service_card_logo($logo_width){
+	width: $logo_width;
+	margin: $logo_width/20;
+}
+@mixin service_product_img($product_width, $product_marginLeft, $product_marginTop:-16px){
+	position: absolute;
+	left: 0;
+	width: $product_width;
+	margin-top: $product_marginTop;
+	margin-left: $product_marginLeft;
+	opacity: 1;
+	z-index: 2;
+}
+@mixin service_card_title($width, $logo_fontS){
+	display: block;
+	text-transform: uppercase;
+	padding: 0 $width/28;
+	font-size: $logo_fontS;
+	color: #fff;
+	font-size: $logo_fontS;
+	font-weight: bolder;
+	letter-spacing: $logo_fontS/$logo_fontS;
+}
+@mixin service_card_span($logo_width){
+	display: block;
+	font-size: $logo_width+10;
+	font-weight: 900;
+	margin-left: -$logo_width/25;
+	margin-top: -$logo_width/20;
+	opacity: .3;
+	letter-spacing: 0px;
+}
+
+@mixin service_card_body($width, $height){
+	height: $height/2;
+	background: #fff;
+	border-radius: 0 0 $width/10 $width/10 ;
+}
+@mixin service_card_product_title($width, $logo_fontS){
+	padding: $width/15 $width/20 $width/25 $width/25;
+	display: block;
+	font-weight: 500;
+	letter-spacing: 0px;
+	text-transform: uppercase;
+	font-size: $logo_fontS - ($logo_fontS/5);
+	b{
+		font-weight: 900;
+		letter-spacing: 0px;
+	}
+}
+@mixin service_card_product_caption($captionFontPx){
+	display: block;
+	padding: 0 $captionFontPx;
+	font-size: $captionFontPx;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+@mixin service_card_list($height){
+	padding-top: $height/50;
+	position: relative;
+	width: 100%;
+	@include flex_box(row, center, wrap, center);
+}
+@mixin service_card_list_item($height, $size1, $size2, $size3, $size4, $size5, $size6, $size7, $size8){
+	display: block;
+	padding: 5px;
+	cursor: help;
+	border-radius: 15px;
+	text-align: center;
+	&:hover{
+		color: $black;
+	}
+	&:nth-child(1){
+		font-size: $size1 + px;
+		&:hover{
+			background-color: $color_verde;
+		}
+	}
+	&:nth-child(2){
+		font-size: $size2 + px;
+		&:hover{
+			background-color: $color_amarillo;
+		}
+	}
+	&:nth-child(3){
+		font-size: $size3 + px;
+		&:hover{
+			background-color: $color_naranja;
+		}
+	}
+	&:nth-child(4){
+		font-size: $size4 + px;
+		&:hover{
+			background-color: $color_rojo;
+		}
+	}
+	&:nth-child(5){
+		font-size: $size5 + px;
+		&:hover{
+			background-color: $color_azul;
+		}
+	}
+	&:nth-child(6){
+		font-size: $size6 + px;
+		&:hover{
+			background-color: $black;
+			color: $color_blanco;
+		}
+	}
+	&:nth-child(7){
+		font-size: $size7 + px;
+		&:hover{
+			background-color: $color_verde;
+		}
+	}
+	&:nth-child(8){
+		font-size: $size8 + px;
+		&:hover{
+			background-color: $color_rojo;
+		}
+	}
+}
+
+@mixin service_card_animation($margin, $translation, $scale, $head_color){
+		transition: all .6s;
+		&:hover{
+			.chead{
+				background-color: $head_color;
+				color: white;
+				.service_logo{
+					transform: scale($scale)
+							translateY(-$translation/5);
+				}
+			}			
+			.cbody{
+				background-color: #fff;
+				color: black;
+			}
+		}
+		&:nth-child(2n+1){
+			margin-bottom: $margin; 
+			&:hover{
+				transform: scale($scale)
+							translateY($translation/3);
+				z-index: 5;
+			}
+		}
+		&:nth-child(2n){
+			margin-top: $margin; 
+			z-index: 4;
+			&:hover{
+				transform: scale($scale)
+							translateY(-$translation);
+			}
+		}
+		&:last-child{
+			&:hover{
+				transform: scale($scale)
+							translateY($translation)
+							translateX(-$translation);
+			}
+		}
+}
